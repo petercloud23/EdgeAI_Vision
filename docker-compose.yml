@@ -1,0 +1,13 @@
+services:
+  edgeai-vision:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edgeai_vision_api
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+    environment:
+      - PYTHONUNBUFFERED=1
